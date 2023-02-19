@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FC, FormEvent, useState} from 'react';
-import Pizza from "./models/Pizza";
+import Pizza from "../models/Pizza";
 import './styles.css';
 
 
