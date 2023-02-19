@@ -35,7 +35,6 @@ const EditPizzaForm: FC<EditPizzaFormProps> =
             }
         }
 
-        console.log('edit pizza>>>>', editPizza)
 
         return (
             <form

@@ -1,5 +1,5 @@
-import React, {ChangeEvent, FC, FormEvent, useState} from 'react';
-import Pizza from "../models/Pizza";
+import React, { FC, ChangeEvent, FormEvent, useState } from 'react';
+import Pizza from '../models/Pizza';
 import './styles.css';
 
 
@@ -13,19 +13,18 @@ const initState = {
     img: '',
 }
 
-const AddPizzaForm: FC<AddPizzaFormProps> = ({addPizza}) => {
-    const [newPizza, setNewPizza] = useState<{ title: string, price: string, img: string }>(initState);
+const AddPizzaForm: FC<AddPizzaFormProps> = ({ addPizza }) => {
+    const [newPizza, setNewPizza] =
+        useState<{title: string, price: string, img: string}>(initState);
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        const {name, value} = e.target;
+        const { name, value } = e.target;
 
         setNewPizza({
             ...newPizza,
             [name]: value
         });
-
     }
-
 
     const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -41,19 +40,18 @@ const AddPizzaForm: FC<AddPizzaFormProps> = ({addPizza}) => {
             });
             setNewPizza(initState);
         }
-
     }
 
 
     return (
         <form onSubmit={handleSubmit}>
-            <input name="title"
-                   type="text"
-                   placeholder="Название"
-                   onChange={handleChange}
-                   value={newPizza.title}
+            <input
+                name="title"
+                type="text"
+                placeholder="Название"
+                onChange={handleChange}
+                value={newPizza.title}
             />
-
             <input
                 name="price"
                 type="text"
@@ -72,7 +70,8 @@ const AddPizzaForm: FC<AddPizzaFormProps> = ({addPizza}) => {
                 + Добавить в меню
             </button>
         </form>
-    );
-};
+    )
+}
+
 
 export default AddPizzaForm;

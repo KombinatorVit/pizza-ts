@@ -28,7 +28,7 @@ const SinglePizza: FC<SinglePizzaProps> =
 
                 <img src={`/images/${pizza.img}`} alt={pizza.title}/>
                 <h2>{pizza.title}</h2>
-                <span>{pizza.price} ₽</span>
+                <span>{pizza.price} грн</span>
 
                 <div className="pizza-controls">
                     <AiFillEdit onClick={handleToggleEdit}/>
